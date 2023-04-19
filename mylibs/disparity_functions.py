@@ -2,8 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as image
 from matplotlib.colors import LogNorm
-from skimage import img_as_ubyte
-from skimage.color import rgb2gray
 
 def SD_array(imageL, imageR, d_minimum, d_maximum):
     # initialization of the array of "squared differences" for different shifts
@@ -49,7 +47,6 @@ def windSum(img, window_width):
     return wind_sums
 
 def SSDtoDmap(SSD_array, d_minimum, d_maximum):
-    
     dMap = np.full(np.shape(SSD_array[0]),0)
     # initialize comparison with the first SSD array
     init = SSD_array[0]
